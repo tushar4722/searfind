@@ -1,0 +1,20 @@
+{
+  "name": "searfind",
+  "version": "1.0.0",
+  "description": "SearFind - Global Job Search, Freelancer & Learning Platform",
+  "scripts": {
+    "frontend": "cd frontend && npm run dev",
+    "backend": "cd backend && npm run dev",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tushar4722/searfind.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
