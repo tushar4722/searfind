@@ -3,6 +3,9 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import JobsPage from "./pages/jobs/JobsPage";
 import PostJobPage from "./pages/jobs/PostJobPage";
+import JobDetailPage from "./pages/jobs/JobDetailPage";
+import MyJobsPage from "./pages/jobs/MyJobsPage";
+import MyApplicationsPage from "./pages/jobs/MyApplicationsPage";
 
 const PrivateRoute = ({ children }) => {
   const token = localStorage.getItem("searfind_token");
@@ -17,8 +20,15 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/jobs" element={<JobsPage />} />
+        <Route path="/jobs/:id" element={<JobDetailPage />} />
         <Route path="/jobs/post" element={
           <PrivateRoute><PostJobPage /></PrivateRoute>
+        } />
+        <Route path="/my-jobs" element={
+          <PrivateRoute><MyJobsPage /></PrivateRoute>
+        } />
+        <Route path="/my-applications" element={
+          <PrivateRoute><MyApplicationsPage /></PrivateRoute>
         } />
         <Route path="/dashboard" element={
           <PrivateRoute>
