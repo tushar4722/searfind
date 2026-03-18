@@ -1,10 +1,11 @@
 {
   "name": "searfind",
   "version": "1.0.0",
-  "description": "SearFind - Global Job Search, Freelancer &amp; Learning Platform",
-  "main": "index.js",
+  "description": "SearFind - Global Job Search, Freelancer & Learning Platform",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "frontend": "cd frontend && npm run dev",
+    "backend": "cd backend && npm run dev",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
   },
   "repository": {
     "type": "git",
@@ -13,29 +14,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/tushar4722/searfind/issues"
-  },
-  "homepage": "https://github.com/tushar4722/searfind#readme",
-  "dependencies": {
-    "bcryptjs": "^3.0.3",
-    "cloudinary": "^2.9.0",
-    "cors": "^2.8.6",
-    "dotenv": "^17.3.1",
-    "express": "^5.2.1",
-    "express-async-handler": "^1.2.0",
-    "express-rate-limit": "^8.3.1",
-    "helmet": "^8.1.0",
-    "jsonwebtoken": "^9.0.3",
-    "mongoose": "^9.3.0",
-    "morgan": "^1.10.1",
-    "multer": "^2.1.1",
-    "nodemailer": "^8.0.2",
-    "socket.io": "^4.8.3",
-    "stripe": "^20.4.1"
-  },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "concurrently": "^9.2.1"
   }
 }
