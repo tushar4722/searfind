@@ -7,7 +7,6 @@ const api = axios.create({
   }
 })
 
-// Add token to every request automatically
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token')
   if (token) {
@@ -16,7 +15,6 @@ api.interceptors.request.use((config) => {
   return config
 })
 
-// Handle token expiry
 api.interceptors.response.use(
   (response) => response,
   (error) => {
