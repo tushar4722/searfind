@@ -1,13 +1,12 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: import.meta.env.VITE_API_URL || 'https://searfind-backend-api.onrender.com/api',
   headers: {
     'Content-Type': 'application/json'
   }
 })
 
-// Add token to every request automatically
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token')
   if (token) {
@@ -16,7 +15,6 @@ api.interceptors.request.use((config) => {
   return config
 })
 
-// Handle token expiry
 api.interceptors.response.use(
   (response) => response,
   (error) => {
